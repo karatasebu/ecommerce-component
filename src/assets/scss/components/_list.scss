@@ -6,7 +6,6 @@
   &__list {
     display: flex;
     overflow-y: auto;
-    scroll-behavior: smooth;
     padding: 15px;
     gap: 15px;
     @include mq("lg") {
@@ -14,6 +13,9 @@
       &::-webkit-scrollbar {
         display: none;
       }
+    }
+    &.-scroll {
+      scroll-behavior: smooth;
     }
   }
   &__btn {
