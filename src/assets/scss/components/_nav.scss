@@ -2,7 +2,6 @@
   display: flex;
   overflow: auto;
   scroll-behavior: smooth;
-  border-bottom: 2px solid rgb(182, 180, 180);
   &::-webkit-scrollbar {
     display: none;
   }
@@ -21,9 +20,11 @@
     cursor: pointer;
     padding: 10px 20px 15px;
     color: $light-text;
+    border-bottom: 2px solid rgb(182, 180, 180);
     @include font-size(16);
     @include mq("lg") {
       text-align: start;
+      border: none;
     }
     &.-active {
       border-bottom: 3px solid $bgc-btn;
