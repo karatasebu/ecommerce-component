@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  overflow: auto;
+  scroll-behavior: smooth;
+  border-bottom: 2px solid rgb(182, 180, 180);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include mq("lg") {
+    flex-direction: column;
+    overflow: unset;
+    border: none;
+    width: 225px;
+    margin-left: 15px;
+  }
+  &__tab {
+    position: relative;
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 10px 20px 15px;
+    color: $light-text;
+    @include font-size(16);
+    @include mq("lg") {
+      text-align: start;
+    }
+    &.-active {
+      border-bottom: 3px solid $bgc-btn;
+      color: $dark-text;
+      @include mq("lg") {
+        border: none;
+        background: $bgc-tab;
+        color: $bgc-btn;
+        border-radius: 5px;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -15px;
+          top: 0;
+          bottom: 0;
+          width: 8px;
+          background: $bgc-btn;
+          border-radius: 0 5px 5px 0;
+        }
+      }
+    }
+  }
+}

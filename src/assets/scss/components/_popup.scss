@@ -1,0 +1,36 @@
+.popup {
+  display: none;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $bgc-popup;
+  @include mq("lg") {
+    width: 300px;
+  }
+  &.-added {
+    display: flex;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $color-light;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-link;
+    @include font-size(12);
+  }
+  &__btn {
+    background: transparent;
+    border: none;
+    color: $color-light;
+    width: 30px;
+    cursor: pointer;
+    @include font-size(18);
+  }
+}

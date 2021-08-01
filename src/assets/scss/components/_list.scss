@@ -1,0 +1,49 @@
+.products {
+  position: relative;
+  @include mq("lg") {
+    width: calc(100% - 255px);
+  }
+  &__list {
+    display: flex;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 15px;
+    gap: 15px;
+    @include mq("lg") {
+      padding: 0;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  &__btn {
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 35px;
+    height: 70px;
+    background: $color-light;
+    border: 1px solid $color-border;
+    cursor: pointer;
+    &:disabled {
+      .products__btn-icon {
+        opacity: 0.2;
+      }
+    }
+    @include mq("lg") {
+      display: block;
+    }
+    &.-left {
+      left: 0;
+      border-left: none;
+      border-radius: 0 35px 35px 0;
+      padding-right: 5px;
+    }
+    &.-right {
+      right: 0;
+      border-right: none;
+      border-radius: 35px 0 0 35px;
+      padding-left: 5px;
+    }
+  }
+}

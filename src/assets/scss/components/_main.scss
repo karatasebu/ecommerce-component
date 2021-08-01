@@ -1,0 +1,17 @@
+.main {
+  &__title {
+    padding: 0 15px;
+    margin-top: 10px;
+    color: $dark-text;
+    @include font-size(24);
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include mq("lg") {
+      flex-direction: row;
+      gap: 15px;
+      margin-top: 15px;
+    }
+  }
+}
