@@ -1,15 +1,12 @@
-import data from "./assets/data/product-list.json";
+import getData from "./request";
 import renderNav from "./components/Nav";
 import renderList from "./components/List";
 
-function init() {
-  const categories = data.responses[0][0].params.userCategories.map((el) =>
-    el.includes(">") ? el.split("> ")[1] : el
-  );
-  const products = data.responses[0][0].params.recommendedProducts;
+async function init() {
+  const data = await getData();
 
-  renderNav(categories, products);
-  renderList(products, categories[0]);
+  renderNav(data.categories, data.products);
+  renderList(data.products, data.categories[0]);
 }
 
 init();
