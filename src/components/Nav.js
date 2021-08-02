@@ -4,7 +4,7 @@ export default function renderNav(categories, products) {
   const navEl = document.querySelector("#nav");
 
   for (let i = 0; i < categories.length; i++) {
-    let tab = document.createElement("button");
+    let tab = document.createElement("a");
     tab.innerHTML = categories[i];
     i === 0
       ? tab.classList.add("nav__tab", "-active")
